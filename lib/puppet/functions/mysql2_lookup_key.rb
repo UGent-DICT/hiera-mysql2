@@ -44,7 +44,7 @@ Puppet::Functions.create_function(:mysql2_lookup_key) do
       :port => context.interpolate(dbconfig['port']) || 3306
     }
 
-    _query = mysql_options[key]
+    _query = context.interpolate(mysql_options[key])
 
     results = query(connection_options, _query)
 
