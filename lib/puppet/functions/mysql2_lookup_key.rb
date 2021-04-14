@@ -84,7 +84,7 @@ Puppet::Functions.create_function(:mysql2_lookup_key) do
         else
           row = {}
           (1..numcols).each do |c|
-            row[md.getColumnName(c)] = res.getString(c)
+            row[md.getColumnLabel(c)] = res.getString(c)
           end
           data << row
         end
